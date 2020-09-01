@@ -24,13 +24,12 @@ export class DistrictViewComponent implements OnInit {
   ngOnInit() {
 
 
-    this.common.disbsharedItem.subscribe(item => this.districtData = item);
+    this.common.distsharedItem.subscribe(item => this.districtData = item);
     this.cardData.confirmed = this.districtData.confirmed;
     this.cardData.recovered = this.districtData.recovered;
     this.cardData.deaths = this.districtData.deaths;
     this.tableData = this.districtData.districtData;
     this.dataSource = this.tableData;
-    console.log(this.districtData);
     if (!this.tableData) {
       this.router.navigate(['/']);
     }

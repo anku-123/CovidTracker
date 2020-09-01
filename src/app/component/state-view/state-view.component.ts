@@ -30,7 +30,7 @@ export class StateViewComponent implements OnInit {
 
     this.getTableData();
 
-    this.common.disbsharedItem.subscribe(item => this.districtData = item);
+    this.common.distsharedItem.subscribe(item => this.districtData = item);
 
   }
 
@@ -38,7 +38,6 @@ export class StateViewComponent implements OnInit {
 
     this.common.getData("https://api.covidindiatracker.com/total.json").subscribe((res: any) => {
       this.cardData = res;
-      console.log(this.cardData);
     });
 
   }
@@ -47,7 +46,6 @@ export class StateViewComponent implements OnInit {
 
     this.common.getData("https://api.covidindiatracker.com/state_data.json").subscribe((res: any) => {
       this.tableData = res;
-      console.log(this.tableData);
       this.dataSource = this.tableData;
     });
 
@@ -56,8 +54,7 @@ export class StateViewComponent implements OnInit {
 
 
   showDistrict(row) {
-    console.log(row);
-    this.common.nextDisbItem(row);
+    this.common.nextDistItem(row);
     this.router.navigate(['/district']);
   }
 }

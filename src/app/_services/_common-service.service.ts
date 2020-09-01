@@ -9,13 +9,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CommonServiceService {
 
-  private disbItem = new BehaviorSubject(0);
-  disbsharedItem = this.disbItem.asObservable();
+  private distItem = new BehaviorSubject(0);
+  distsharedItem = this.distItem.asObservable();
 
   constructor(private http: HttpClient) { }
-  nextDisbItem(item: number) {
-    console.log(item);
-    this.disbItem.next(item);
+  nextDistItem(item: number) {
+    this.distItem.next(item);
   }
 
 
