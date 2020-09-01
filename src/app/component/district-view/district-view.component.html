@@ -33,8 +33,7 @@
 
 <div class="container">
  <div class="table-container">
-    <table mat-table [dataSource]="tableData" class="table"
-           matSort matSortActive="confirmed" matSortDisableClear matSortDirection="desc">
+    <table mat-table [dataSource]="tableData" class="table">
  
       <ng-container matColumnDef="name" >
         <th mat-header-cell *matHeaderCellDef>District</th>
@@ -42,7 +41,7 @@
       </ng-container>
 
       <ng-container matColumnDef="confirmed"  class="customCol">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>Confirmed</th>
+        <th mat-header-cell *matHeaderCellDef >Confirmed</th>
         <td mat-cell *matCellDef="let row">{{(row.confirmed | number:'':'en-IN')?(row.confirmed | number:'':'en-IN'):'-'}}</td>
       </ng-container>
 
