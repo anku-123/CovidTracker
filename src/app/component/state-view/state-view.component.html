@@ -1,0 +1,65 @@
+
+<div class="cards" >
+<mat-card  class="customCard customCard1" fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%">
+  <mat-card-content >
+  {{cardData.confirmed | number:'':'en-IN'}}
+  </mat-card-content>
+  <mat-card-footer>
+  confirmed
+  </mat-card-footer>
+</mat-card>
+
+<mat-card  class="customCard customCard2" fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%">
+  <mat-card-content>
+  {{cardData.recovered | number:'':'en-IN'}}
+  </mat-card-content>
+  <mat-card-footer>
+Recovered
+  </mat-card-footer>
+</mat-card>
+
+
+<mat-card  class="customCard customCard3" fxFlex="33%" fxFlex.xs="100%" fxFlex.sm="50%">
+  <mat-card-content>
+  {{cardData.deaths | number:'':'en-IN'}}
+  </mat-card-content>
+  <mat-card-footer>
+  Deaths
+  </mat-card-footer>
+</mat-card>
+
+</div>
+
+
+<div class="container">
+  <div class="table-container">
+    <table mat-table [dataSource]="tableData" class="table"
+           matSort matSortActive="confirmed" matSortDisableClear matSortDirection="desc">
+ 
+      <ng-container matColumnDef="state" >
+        <th mat-header-cell *matHeaderCellDef>States</th>
+        <td mat-cell *matCellDef="let row" class="stateColor"  (click)="showDistrict(row)" >{{row.state}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="confirmed"  class="customCol">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>Confirmed</th>
+        <td mat-cell *matCellDef="let row">{{row.confirmed | number:'':'en-IN'}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="recovered" class="customCol">
+        <th mat-header-cell *matHeaderCellDef>Recovered</th>
+        <td mat-cell *matCellDef="let row">{{row.recovered | number:'':'en-IN'}}</td>
+      </ng-container>
+
+       <ng-container matColumnDef="deaths"  class="customCol">
+        <th mat-header-cell *matHeaderCellDef>Deaths</th>
+        <td mat-cell *matCellDef="let row">{{row.deaths | number:'':'en-IN'}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+</div>
+

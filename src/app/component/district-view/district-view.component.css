@@ -1,0 +1,91 @@
+.cards {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.customCard {
+  margin: 1rem;
+  background-clip: border-box;
+}
+
+.customCard > mat-card-footer {
+  padding: 0.5rem 0rem;
+}
+
+.customCard1 {
+  background: #de494c15;
+}
+
+.customCard1 > mat-card-content,
+.customCard1 > mat-card-footer {
+  color: #de494b;
+  /* background-color: #de494b; */
+}
+
+.customCard1 > mat-card-footer {
+  background-color: #de494c27;
+}
+
+.customCard2 > mat-card-content,
+.customCard2 > mat-card-footer {
+  color: #3f9f6d;
+}
+
+.customCard2 {
+  background: #3f9f6d15;
+}
+
+.customCard2 > mat-card-footer {
+  background-color: #3f9f6d27;
+}
+
+.customCard3 > mat-card-content,
+.customCard3 > mat-card-footer {
+  color: #758397;
+}
+
+.customCard3 {
+  background: #75839715;
+}
+
+.customCard3 > mat-card-footer {
+  background-color: #75839727;
+}
+
+mat-card-content {
+  font-size: 2.5rem;
+}
+
+.container {
+  justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.table-container {
+  border: 1px solid #e0e0e0;
+}
+
+td,
+th {
+  border: 1px solid #e0e0e0;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+  padding: 0 2rem;
+}
+
+.stateColor {
+  background-color: #edf2f8;
+}
+
+table {
+  font-size: 1rem;
+}
